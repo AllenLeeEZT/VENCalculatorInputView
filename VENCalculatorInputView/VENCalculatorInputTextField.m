@@ -20,10 +20,14 @@
     [self setUpInit];
 }
 
+- (UIView<UIInputViewAudioFeedback> *)createCalculatorInputView {
+    return [VENCalculatorInputView new];
+}
+
 - (void)setUpInit {
     self.locale = [NSLocale currentLocale];
 
-    VENCalculatorInputView *inputView = [VENCalculatorInputView new];
+    VENCalculatorInputView *inputView = [self createCalculatorInputView];
     inputView.delegate = self;
     inputView.locale = self.locale;
     self.inputView = inputView;

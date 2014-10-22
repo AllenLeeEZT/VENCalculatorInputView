@@ -40,4 +40,6 @@
 @property (strong, nonatomic) UIColor *operationButtonBackgroundColor;
 @property (strong, nonatomic) UIColor *operationButtonBorderColor;
 
++ (NSString *)nibName;
+
 @end

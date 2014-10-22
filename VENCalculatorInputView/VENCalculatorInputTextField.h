@@ -9,4 +9,6 @@
  */
 @property (strong, nonatomic) NSLocale *locale;
 
+- (UIView<UIInputViewAudioFeedback> *)createCalculatorInputView;
+
 @end
