@@ -7,7 +7,18 @@
 //
 
 #import "VENCalculatorInputTextField.h"
+#import "EZCheckCalculatorInputView.h"
 
 @interface EZCheckCalculatorInputTextField : VENCalculatorInputTextField
+
+- (EZCheckCalculatorInputView *)getInputView;
+
+@end
+
+
+@interface EZCheckCalculatorInputTextFieldWithoutKeyboard : VENCalculatorInputTextField
+@property (strong, nonatomic, setter=setCalculatorInputView:) UIView *calculatorInputView;
+
+- (EZCheckCalculatorInputView *)getInputView;
 
 @end

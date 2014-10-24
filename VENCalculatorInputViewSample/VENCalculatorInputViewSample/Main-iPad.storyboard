@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qde-2e-uto">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="o8S-pX-qWy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Ebb-hl-4ff">
+            <objects>
+                <navigationController id="o8S-pX-qWy" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ysB-Ha-6Ut">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qde-2e-uto" kind="relationship" relationship="rootViewController" id="tWY-4t-VFm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMN-t4-7Bz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514" y="831"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="3pY-98-R4r">
             <objects>
@@ -27,14 +44,58 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIG-tv-8ZU">
+                                <rect key="frame" x="489" y="200" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="STW-m2-AV7" kind="push" id="QyE-MK-3Y3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="i2n-tt-yvf"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sT-ix-nhr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692.48000000000002" y="807.25333333333333"/>
+            <point key="canvasLocation" x="684" y="831"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="XK9-vL-QRC">
+            <objects>
+                <viewController id="STW-m2-AV7" customClass="ViewController2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mcr-uW-30t"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q62-Nh-0sG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BSR-ty-1xu">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="I'm a money calculator!3" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVC-E1-uzO" customClass="EZCheckCalculatorInputTextFieldWithoutKeyboard">
+                                <rect key="frame" x="16" y="100" width="429" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8M-Wt-Sne">
+                                <rect key="frame" x="565" y="66" width="459" height="702"/>
+                                <color key="backgroundColor" red="0.42352944609999998" green="0.74901962280000001" blue="0.41960787770000002" alpha="0.82999999999999996" colorSpace="deviceRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dap-Ky-IQq"/>
+                    <connections>
+                        <outlet property="calculatorInputTextField" destination="AVC-E1-uzO" id="Fye-dD-Lwe"/>
+                        <outlet property="placeholderView" destination="C8M-Wt-Sne" id="bjb-Ju-o1U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJw-1G-9kW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1840" y="911"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

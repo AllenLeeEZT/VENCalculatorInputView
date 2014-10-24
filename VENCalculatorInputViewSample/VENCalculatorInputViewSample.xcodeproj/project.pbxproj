@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		2CBB59849A1C47F0BF1325E8 /* libPods-VENCalculatorInputViewSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E99D08981FEF415990879498 /* libPods-VENCalculatorInputViewSample.a */; };
 		A809EB9D19F7D4EA00F780ED /* EZCheckCalculatorInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A809EB9C19F7D4EA00F780ED /* EZCheckCalculatorInputView.m */; };
-		A809EB9F19F7D50800F780ED /* EZCheckCalculatorInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A809EB9E19F7D50800F780ED /* EZCheckCalculatorInputView.xib */; };
+		A809EB9F19F7D50800F780ED /* EZCheckCalculatorInputViewWithoutKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = A809EB9E19F7D50800F780ED /* EZCheckCalculatorInputViewWithoutKeyboard.xib */; };
 		A809EBA219F7D5B100F780ED /* EZCheckCalculatorInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A809EBA119F7D5B100F780ED /* EZCheckCalculatorInputTextField.m */; };
+		A86F8A7D19FA2739008A7F1C /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F8A7C19FA2739008A7F1C /* ViewController2.m */; };
+		A86F8A7F19FA4048008A7F1C /* EZCheckCalculatorInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86F8A7E19FA4048008A7F1C /* EZCheckCalculatorInputView.xib */; };
 		A8F88A1919F7BF6300D7B0E4 /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F88A1819F7BF6300D7B0E4 /* Main-iPad.storyboard */; };
 		B64A634B18AAB0990091A465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64A634A18AAB0990091A465 /* Foundation.framework */; };
 		B64A634D18AAB0990091A465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64A634C18AAB0990091A465 /* CoreGraphics.framework */; };
@@ -42,9 +44,12 @@
 		00C5917638BCDD9378DA8FE7 /* Pods-VENCalculatorInputViewSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VENCalculatorInputViewSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VENCalculatorInputViewSample/Pods-VENCalculatorInputViewSample.debug.xcconfig"; sourceTree = "<group>"; };
 		A809EB9B19F7D4EA00F780ED /* EZCheckCalculatorInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCheckCalculatorInputView.h; sourceTree = "<group>"; };
 		A809EB9C19F7D4EA00F780ED /* EZCheckCalculatorInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZCheckCalculatorInputView.m; sourceTree = "<group>"; };
-		A809EB9E19F7D50800F780ED /* EZCheckCalculatorInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EZCheckCalculatorInputView.xib; sourceTree = "<group>"; };
+		A809EB9E19F7D50800F780ED /* EZCheckCalculatorInputViewWithoutKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EZCheckCalculatorInputViewWithoutKeyboard.xib; sourceTree = "<group>"; };
 		A809EBA019F7D5B100F780ED /* EZCheckCalculatorInputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCheckCalculatorInputTextField.h; sourceTree = "<group>"; };
 		A809EBA119F7D5B100F780ED /* EZCheckCalculatorInputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZCheckCalculatorInputTextField.m; sourceTree = "<group>"; };
+		A86F8A7B19FA2739008A7F1C /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		A86F8A7C19FA2739008A7F1C /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		A86F8A7E19FA4048008A7F1C /* EZCheckCalculatorInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EZCheckCalculatorInputView.xib; sourceTree = "<group>"; };
 		A8F88A1819F7BF6300D7B0E4 /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPad.storyboard"; sourceTree = "<group>"; };
 		B64A634718AAB0990091A465 /* VENCalculatorInputViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VENCalculatorInputViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64A634A18AAB0990091A465 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,7 +113,8 @@
 			children = (
 				A809EB9B19F7D4EA00F780ED /* EZCheckCalculatorInputView.h */,
 				A809EB9C19F7D4EA00F780ED /* EZCheckCalculatorInputView.m */,
-				A809EB9E19F7D50800F780ED /* EZCheckCalculatorInputView.xib */,
+				A86F8A7E19FA4048008A7F1C /* EZCheckCalculatorInputView.xib */,
+				A809EB9E19F7D50800F780ED /* EZCheckCalculatorInputViewWithoutKeyboard.xib */,
 				A809EBA019F7D5B100F780ED /* EZCheckCalculatorInputTextField.h */,
 				A809EBA119F7D5B100F780ED /* EZCheckCalculatorInputTextField.m */,
 			);
@@ -157,6 +163,8 @@
 				A8F88A1819F7BF6300D7B0E4 /* Main-iPad.storyboard */,
 				B64A635F18AAB0990091A465 /* VENViewController.h */,
 				B64A636018AAB0990091A465 /* VENViewController.m */,
+				A86F8A7B19FA2739008A7F1C /* ViewController2.h */,
+				A86F8A7C19FA2739008A7F1C /* ViewController2.m */,
 				B64A636218AAB0990091A465 /* Images.xcassets */,
 				B64A635118AAB0990091A465 /* Supporting Files */,
 			);
@@ -272,7 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B64A636318AAB0990091A465 /* Images.xcassets in Resources */,
-				A809EB9F19F7D50800F780ED /* EZCheckCalculatorInputView.xib in Resources */,
+				A86F8A7F19FA4048008A7F1C /* EZCheckCalculatorInputView.xib in Resources */,
+				A809EB9F19F7D50800F780ED /* EZCheckCalculatorInputViewWithoutKeyboard.xib in Resources */,
 				B64A635518AAB0990091A465 /* InfoPlist.strings in Resources */,
 				B64A635E18AAB0990091A465 /* Main.storyboard in Resources */,
 				A8F88A1919F7BF6300D7B0E4 /* Main-iPad.storyboard in Resources */,
@@ -332,6 +341,7 @@
 				A809EBA219F7D5B100F780ED /* EZCheckCalculatorInputTextField.m in Sources */,
 				B64A635B18AAB0990091A465 /* VENAppDelegate.m in Sources */,
 				B64A635718AAB0990091A465 /* main.m in Sources */,
+				A86F8A7D19FA2739008A7F1C /* ViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

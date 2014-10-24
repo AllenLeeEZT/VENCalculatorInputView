@@ -6,12 +6,12 @@ Pod::Spec.new do |s|
                    A pretty calculator keyboard for iOS. Use it as a standalone keyboard or use our VENCalculatorInputTextField.
                    DESC
 
-  s.homepage     = "https://github.com/venmo/VENCalculatorInputView"
+  s.homepage     = "https://github.com/AllenLeeEZT/VENCalculatorInputView"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Ayaka Nonaka" => "ayaka@venmo.com" }
   s.platform     = :ios, '5.0'
   s.ios.deployment_target = '5.0'
-  s.source       = { :git => "https://github.com/venmo/VENCalculatorInputView.git",
+  s.source       = { :git => "https://github.com/AllenLeeEZT/VENCalculatorInputView.git",
                      :tag => "v#{s.version}"
   }
   s.source_files = 'VENCalculatorInputView/**/*.{h,m}'

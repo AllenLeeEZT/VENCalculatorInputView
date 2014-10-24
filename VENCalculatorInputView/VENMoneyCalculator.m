@@ -35,9 +35,9 @@
         }
     }
     if ([result isKindOfClass:[NSNumber class]]) {
-        NSInteger integerExpression = [(NSNumber *)result integerValue];
-        CGFloat floatExpression = [(NSNumber *)result floatValue];
-        if (integerExpression == floatExpression) {
+        unsigned long integerExpression = [(NSNumber *)result unsignedLongValue];
+        double floatExpression = [(NSNumber *)result doubleValue];
+        if (fequal(integerExpression, floatExpression)) {
             return [(NSNumber *)result stringValue];
         } else if (floatExpression >= CGFLOAT_MAX || floatExpression <= CGFLOAT_MIN || isnan(floatExpression)) {
             return @"0";
@@ -76,7 +76,7 @@
 }
 
 - (NSCharacterSet *)illegalCharacters {
-    return [[NSCharacterSet characterSetWithCharactersInString:@"0123456789-/*.+"] invertedSet];
+    return [[NSCharacterSet characterSetWithCharactersInString:@"0123456789-/*.+Cc"] invertedSet];
 }
 
 - (NSString *)decimalSeparator {

@@ -11,3 +11,7 @@
 @interface EZCheckCalculatorInputView : VENCalculatorInputView
 
 @end
+
+@interface EZCheckCalculatorInputViewWithoutKeyboard : VENCalculatorInputView
+
+@end
