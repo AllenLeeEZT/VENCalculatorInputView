@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.calculatorInputTextField.maxLength = 12;
+    self.calculatorInputTextField.forceCurrencyStyle = YES;
     EZCheckCalculatorInputView *inputView = [self.calculatorInputTextField getInputView];
     [self.placeholderView addSubview:inputView];
 }

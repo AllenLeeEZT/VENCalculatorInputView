@@ -4,6 +4,7 @@
 
 @interface VENCalculatorInputTextField ()
 @property (strong, nonatomic) VENMoneyCalculator *moneyCalculator;
+- (NSString *)evaluateExpression:(NSString *)expressionString;
 @end
 
 @implementation VENCalculatorInputTextField
@@ -26,6 +27,7 @@
 
 - (void)setUpInit {
     self.locale = [NSLocale currentLocale];
+    self.forceCurrencyStyle = NO;
 
     [self setUpInputView];
 
@@ -75,14 +77,17 @@
             [lastCharacterString isEqualToString:@"×"] ||
             [lastCharacterString isEqualToString:@"÷"]) {
             
-            NSString *evaluatedString = [self.moneyCalculator evaluateExpression:subString];
+            NSString *evaluatedString = [self evaluateExpression:subString];
             if (evaluatedString) {
                 self.text = [NSString stringWithFormat:@"%@%@", evaluatedString, lastCharacterString];
             } else {
                 self.text = subString;
             }
         } else if ([lastCharacterString isEqualToString:[self decimalSeparator]]) {
-            if ([subString rangeOfString:[self decimalSeparator]].location != NSNotFound) {
+            NSCharacterSet *operationSet = [NSCharacterSet characterSetWithCharactersInString:@"+−×÷"];
+            NSString *secondSubString = [[subString componentsSeparatedByCharactersInSet:operationSet] lastObject];
+            
+            if ([secondSubString rangeOfString:[self decimalSeparator]].location != NSNotFound) {
                 self.text = subString;
             }
         }
@@ -91,7 +96,7 @@
     }
     
     if ([lastCharacterString isEqualToString:@"="]) {
-        NSString *evaluatedString = [self.moneyCalculator evaluateExpression:subString];
+        NSString *evaluatedString = [self evaluateExpression:subString];
         if (evaluatedString) {
             self.text = evaluatedString;
         } else {
@@ -104,7 +109,7 @@
 
 - (void)venCalculatorTextFieldDidEndEditing {
     NSString *textToEvaluate = [self trimExpressionString:self.text];
-    NSString *evaluatedString = [self.moneyCalculator evaluateExpression:textToEvaluate];
+    NSString *evaluatedString = [self evaluateExpression:textToEvaluate];
     if (evaluatedString) {
         self.text = evaluatedString;
     }
@@ -141,6 +146,16 @@
 }
 
 #pragma mark - Helpers
+
+- (NSString *)evaluateExpression:(NSString *)expressionString {
+    NSString *evaluatedString;
+    if (self.forceCurrencyStyle) {
+        evaluatedString = [self.moneyCalculator evaluateExpressionUsingCurrencyStyle:expressionString];
+    }else {
+        evaluatedString = [self.moneyCalculator evaluateExpression:expressionString];
+    }
+    return evaluatedString;
+}
 
 /**
  * Removes any trailing operations and decimals.

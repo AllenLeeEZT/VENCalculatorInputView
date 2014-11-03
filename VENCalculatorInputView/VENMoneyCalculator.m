@@ -50,6 +50,16 @@
     }
 }
 
+- (NSString *)evaluateExpressionUsingCurrencyStyle:(NSString *)expression {
+    NSString *evaluatedObject = [self evaluateExpression:expression];
+    double floatExpression = [evaluatedObject doubleValue];
+    
+    NSString *moneyFormattedNumber = [[self numberFormatter] stringFromNumber:@(floatExpression)];
+    evaluatedObject = [moneyFormattedNumber stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+    return evaluatedObject;
+}
+
 
 #pragma mark - Private
 

@@ -10,6 +10,7 @@
 @property (strong, nonatomic) NSLocale *locale;
 @property (strong, nonatomic) UIView *calculatorInputView;
 @property (assign) NSUInteger maxLength;
+@property (assign) BOOL forceCurrencyStyle;
 
 - (void)setUpInputView;
 - (UIView *)createCalculatorInputView;
