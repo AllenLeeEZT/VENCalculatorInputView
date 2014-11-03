@@ -13,6 +13,6 @@
  * @return The evaluated expression. Returns nil if the expression is invalid.
  */
 - (NSString *)evaluateExpression:(NSString *)expression;
-- (NSString *)evaluateExpressionUsingCurrencyStyle:(NSString *)expression;
+- (NSString *)evaluateExpressionForceCurrencyStyle:(NSString *)expression;
 
 @end

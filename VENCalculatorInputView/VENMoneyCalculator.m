@@ -3,6 +3,8 @@
 
 @interface VENMoneyCalculator ()
 @property (strong, nonatomic) NSNumberFormatter *numberFormatter;
+
+- (NSString *)evaluateExpression:(NSString *)expression forceCurrencyStyle:(BOOL)usingCurrencyStyle;
 @end
 
 @implementation VENMoneyCalculator
@@ -16,6 +18,14 @@
 }
 
 - (NSString *)evaluateExpression:(NSString *)expressionString {
+    return [self evaluateExpression:expressionString forceCurrencyStyle:NO];
+}
+
+- (NSString *)evaluateExpressionForceCurrencyStyle:(NSString *)expressionString {
+    return [self evaluateExpression:expressionString forceCurrencyStyle:YES];
+}
+
+- (NSString *)evaluateExpression:(NSString *)expressionString forceCurrencyStyle:(BOOL)forceCurrencyStyle {
     if (!expressionString) {
         return nil;
     }
@@ -38,7 +48,12 @@
         unsigned long integerExpression = [(NSNumber *)result unsignedLongValue];
         double floatExpression = [(NSNumber *)result doubleValue];
         if (fequal(integerExpression, floatExpression)) {
-            return [(NSNumber *)result stringValue];
+            if (forceCurrencyStyle) {
+                NSString *moneyFormattedNumber = [[self numberFormatter] stringFromNumber:@(integerExpression)];
+                return [moneyFormattedNumber stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            }else {
+                return [(NSNumber *)result stringValue];
+            }
         } else if (floatExpression >= CGFLOAT_MAX || floatExpression <= CGFLOAT_MIN || isnan(floatExpression)) {
             return @"0";
         } else {
@@ -49,17 +64,6 @@
         return nil;
     }
 }
-
-- (NSString *)evaluateExpressionUsingCurrencyStyle:(NSString *)expression {
-    NSString *evaluatedObject = [self evaluateExpression:expression];
-    double floatExpression = [evaluatedObject doubleValue];
-    
-    NSString *moneyFormattedNumber = [[self numberFormatter] stringFromNumber:@(floatExpression)];
-    evaluatedObject = [moneyFormattedNumber stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
-    return evaluatedObject;
-}
-
 
 #pragma mark - Private
 

@@ -150,7 +150,7 @@
 - (NSString *)evaluateExpression:(NSString *)expressionString {
     NSString *evaluatedString;
     if (self.forceCurrencyStyle) {
-        evaluatedString = [self.moneyCalculator evaluateExpressionUsingCurrencyStyle:expressionString];
+        evaluatedString = [self.moneyCalculator evaluateExpressionForceCurrencyStyle:expressionString];
     }else {
         evaluatedString = [self.moneyCalculator evaluateExpression:expressionString];
     }
