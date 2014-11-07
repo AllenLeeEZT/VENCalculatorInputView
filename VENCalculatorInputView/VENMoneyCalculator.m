@@ -57,8 +57,12 @@
         } else if (floatExpression >= CGFLOAT_MAX || floatExpression <= CGFLOAT_MIN || isnan(floatExpression)) {
             return @"0";
         } else {
-            NSString *moneyFormattedNumber = [[self numberFormatter] stringFromNumber:@(floatExpression)];
-            return [moneyFormattedNumber stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if (forceCurrencyStyle) {
+                NSString *moneyFormattedNumber = [[self numberFormatter] stringFromNumber:@(floatExpression)];
+                return [moneyFormattedNumber stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            }else {
+                return [(NSNumber *)result stringValue];
+            }
         }
     } else {
         return nil;
