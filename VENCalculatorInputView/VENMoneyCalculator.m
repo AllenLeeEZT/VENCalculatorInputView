@@ -85,7 +85,7 @@
         [_numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
         [_numberFormatter setCurrencySymbol:@""];
     }
-    [_numberFormatter setGroupingSeparator:[self groupingSeparator]];
+    [_numberFormatter setCurrencyGroupingSeparator:[self groupingSeparator]];
     [_numberFormatter setCurrencyDecimalSeparator:[self decimalSeparator]];
     return _numberFormatter;
 }
