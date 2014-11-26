@@ -107,11 +107,19 @@
 }
 
 - (NSString *)groupingSeparator {
-    return [self.locale objectForKey:NSLocaleGroupingSeparator];
+    NSString *groupingSeparator = [self.locale objectForKey:NSLocaleGroupingSeparator];
+    if (!groupingSeparator) {
+        groupingSeparator = @"";
+    }
+    return groupingSeparator;
 }
 
 - (NSString *)decimalSeparator {
-    return [self.locale objectForKey:NSLocaleDecimalSeparator];
+    NSString *decimalSeparator = [self.locale objectForKey:NSLocaleDecimalSeparator];
+    if (!decimalSeparator) {
+        decimalSeparator = @"";
+    }
+    return decimalSeparator;
 }
 
 @end
