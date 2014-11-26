@@ -84,8 +84,9 @@
         _numberFormatter = [NSNumberFormatter new];
         [_numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
         [_numberFormatter setCurrencySymbol:@""];
-        [_numberFormatter setCurrencyDecimalSeparator:[self decimalSeparator]];
     }
+    [_numberFormatter setGroupingSeparator:[self groupingSeparator]];
+    [_numberFormatter setCurrencyDecimalSeparator:[self decimalSeparator]];
     return _numberFormatter;
 }
 
@@ -103,6 +104,10 @@
 
 - (NSCharacterSet *)illegalCharacters {
     return [[NSCharacterSet characterSetWithCharactersInString:@"0123456789-/*.+Cc"] invertedSet];
+}
+
+- (NSString *)groupingSeparator {
+    return [self.locale objectForKey:NSLocaleGroupingSeparator];
 }
 
 - (NSString *)decimalSeparator {
