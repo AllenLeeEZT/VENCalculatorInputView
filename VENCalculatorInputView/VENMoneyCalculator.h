@@ -6,6 +6,7 @@
 @interface VENMoneyCalculator : NSObject
 
 @property (strong, nonatomic) NSLocale *locale;
+@property (nonatomic, setter=setMaximumFractionDigits:) NSUInteger maximumFractionDigits;
 
 /**
  * Evaluates a mathematical expression containing +, −, ×, and ÷.

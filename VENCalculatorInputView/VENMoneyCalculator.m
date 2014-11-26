@@ -9,6 +9,14 @@
 
 @implementation VENMoneyCalculator
 
+- (void)setMaximumFractionDigits:(NSUInteger)maximumFractionDigits {
+    static NSString * const key = @"maximumFractionDigits";
+    [self willChangeValueForKey:key];
+    _maximumFractionDigits = maximumFractionDigits;
+    self.numberFormatter.maximumFractionDigits = maximumFractionDigits;
+    [self didChangeValueForKey:key];
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
